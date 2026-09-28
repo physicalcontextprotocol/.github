@@ -12,7 +12,7 @@
 
 <!--
   Be specific, and give real numbers. "213 tests pass" is worth nothing
-  if it does not reproduce; 178 passing, 10 skipped, and why, is worth a
+  if it does not reproduce; 213 passing, 1 skipped, and why, is worth a
   lot.
 -->
 

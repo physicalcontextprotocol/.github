@@ -55,13 +55,13 @@ reference implementation, and none of them calls the others.
 | | |
 |---|---|
 | **Specification** | [`pmcp-spec`](https://github.com/physicalcontextprotocol/pmcp-spec) — protocol, JSON Schema, TLA+ models, and [`LIMITATIONS.md`](https://github.com/physicalcontextprotocol/pmcp-spec/blob/main/LIMITATIONS.md) |
-| **Python SDK** | [`pmcp-python`](https://github.com/physicalcontextprotocol/pmcp-python) — 187 tests, 178 pass / 10 skip by default, 187 with the `hnn` extra |
+| **Python SDK** | [`pmcp-python`](https://github.com/physicalcontextprotocol/pmcp-python) — 214 tests collected, 213 pass / 1 skip by default |
 | **TypeScript SDK** | [`pmcp-typescript`](https://github.com/physicalcontextprotocol/pmcp-typescript) — skeleton, no test suite yet |
 | **Rust SDK** | [`pmcp-rust`](https://github.com/physicalcontextprotocol/pmcp-rust) — `pmcp-core` builds clean, 43 tests pass; `pmcp-ledger` does not compile |
 | **Conformance** | [`pmcp-conformance`](https://github.com/physicalcontextprotocol/pmcp-conformance) — 42 tests any implementation must pass |
 | **Safety modules** | [`pmcp-safety`](https://github.com/physicalcontextprotocol/pmcp-safety) — safety loop, TEE attestator, multisig gate, edge hardening |
 | **Reference servers** | [`pmcp-servers`](https://github.com/physicalcontextprotocol/pmcp-servers) — illustrative robot servers |
-| **Registry** | [`pmcp-registry`](https://github.com/physicalcontextprotocol/pmcp-registry) — experimental; **do not expose to an untrusted network** |
+| **Registry** | `pmcp-registry` — **held private**; in-memory TTL discovery with no persistence, no seeds and no auth. Not on the public list until it has all three. |
 | **Quarantine** | `pmcp-labs` — private, unsupported, reference only |
 
 ## What is verified, and what is not
@@ -92,13 +92,13 @@ find out.
 | Repository | State | Do not do this |
 |---|---|---|
 | `pmcp-spec` | v0.5, schema v0.6.0, model-checked | — |
-| `pmcp-python` | 178 tests pass on a default install | — |
+| `pmcp-python` | 213 of 214 tests pass on a default install; the 1 skip guards a missing-dependency branch | — |
 | `pmcp-conformance` | 42 tests pass | — |
 | `pmcp-typescript` | **skeleton** | do not assume parity with Python or Rust |
 | `pmcp-rust` | `pmcp-core` only | do not expect `pmcp-ledger` to build |
 | `pmcp-safety` | TEE and safety loop are **mock-backed** | do not treat either as a security boundary |
 | `pmcp-servers` | illustrative, no hardware drivers | do not copy one into production without redoing its review |
-| `pmcp-registry` | **no auth, CORS `*` on writes** | do not put it on a shared network |
+| `pmcp-registry` | **held private** — no auth, CORS `*` on writes, no persistence | not published; see its README |
 
 Each repository's README and CHANGELOG carries the detail. Every
 repository has [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)

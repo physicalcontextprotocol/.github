@@ -62,7 +62,7 @@ safety properties are enforced rather than asserted.
 Concretely, please:
 
 - Say what you actually ran. "213 tests pass" is worth nothing if it
-  does not reproduce; 178 passing, 10 skipped, and why, is worth a lot.
+  does not reproduce; 213 passing, 1 skipped, and why, is worth a lot.
 - Do not add `|| true`, `continue-on-error`, or any other construct whose
   effect is to make a red check look green. If a check cannot pass yet,
   declare it non-blocking and explain why in a comment.
