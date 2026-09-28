@@ -49,7 +49,7 @@ actual contents:
 | `pmcp-conformance` | pytest (3.9–3.12), plus a test-count guard |
 | `pmcp-rust` | `pmcp-core` build + 43 tests. `pmcp-ledger` is declared non-blocking with its 19 known errors enumerated |
 | `pmcp-typescript` | build + type-check + lint. **No test job — there is no test suite** |
-| `pmcp-spec` | JSON Schema meta-validation + example round-trip. TLA+ model checking is defined but disabled pending a self-hosted runner |
+| `pmcp-spec` | JSON Schema meta-validation + example round-trip, plus live TLA+ model checking with a mutant self-test (both models check clean; TLC must reject both mutants) |
 | `pmcp-safety` | module import check + mock-backend guard |
 | `pmcp-servers` | documented-setup smoke test |
 | `pmcp-registry` | both aiohttp apps construct, frontend builds |
