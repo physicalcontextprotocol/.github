@@ -9,7 +9,7 @@
 
 **Which repository and file?**
 
-<!-- e.g. pmcp-python/README.md, or LIMITATIONS.md -->
+<!-- e.g. pcp-python/README.md, or LIMITATIONS.md -->
 
 **What does it currently claim?**
 

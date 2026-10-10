@@ -21,7 +21,7 @@ page.
 Every repository in the organization **overrides** `SECURITY.md` and
 `CONTRIBUTING.md` with its own. The canonical full security policy lives
 in
-[`pmcp-spec/SECURITY.md`](https://github.com/physicalcontextprotocol/pmcp-spec/blob/main/SECURITY.md);
+[`pcp-spec/SECURITY.md`](https://github.com/physicalcontextprotocol/pcp-spec/blob/main/SECURITY.md);
 the copy here is the org-level fallback.
 
 ## What is deliberately NOT here
@@ -30,8 +30,8 @@ the copy here is the org-level fallback.
 
 There used to be a `workflows/ci.yml` in this location. It was a
 monorepo-era pipeline whose every job referenced paths that no longer
-exist after the split — `working-directory: pmcp-python`,
-`working-directory: pmcp-rust/pmcp-core`, and so on.
+exist after the split — `working-directory: pcp-python`,
+`working-directory: pcp-rust/pcp-core`, and so on.
 
 That file was removed rather than left in place, because a workflow at
 the root of a `.github` repository is not inert: it is a **default
@@ -45,15 +45,15 @@ actual contents:
 
 | Repository | Blocking checks |
 |---|---|
-| `pmcp-python` | pytest (3.9–3.12), mypy, ruff, black, bandit, pip-audit, integration, benchmark |
-| `pmcp-conformance` | pytest (3.9–3.12), plus a test-count guard |
-| `pmcp-rust` | `pmcp-core` build + 43 tests. `pmcp-ledger` is declared non-blocking with its 19 known errors enumerated |
-| `pmcp-typescript` | build + type-check + lint. **No test job — there is no test suite** |
-| `pmcp-spec` | JSON Schema meta-validation + example round-trip, plus live TLA+ model checking with a mutant self-test (both models check clean; TLC must reject both mutants) |
-| `pmcp-safety` | module import check + mock-backend guard |
-| `pmcp-servers` | documented-setup smoke test |
-| `pmcp-registry` | both aiohttp apps construct, frontend builds |
-| `pmcp-labs` | a Python syntax check that is explicitly allowed to fail |
+| `pcp-python` | pytest (3.9–3.12), mypy, ruff, black, bandit, pip-audit, integration, benchmark |
+| `pcp-conformance` | pytest (3.9–3.12), plus a test-count guard |
+| `pcp-rust` | `pcp-core` build + 43 tests. `pcp-ledger` is declared non-blocking with its 19 known errors enumerated |
+| `pcp-typescript` | build + type-check + lint. **No test job — there is no test suite** |
+| `pcp-spec` | JSON Schema meta-validation + example round-trip, plus live TLA+ model checking with a mutant self-test (both models check clean; TLC must reject both mutants) |
+| `pcp-safety` | module import check + mock-backend guard |
+| `pcp-servers` | documented-setup smoke test |
+| `pcp-registry` | both aiohttp apps construct, frontend builds |
+| `pcp-labs` | a Python syntax check that is explicitly allowed to fail |
 
 If you add a workflow here, remember it applies to **every** repository
 in the organization. That is almost never what you want.

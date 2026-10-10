@@ -19,20 +19,20 @@ preparation only.
 
 | Repository | Visibility at launch | State |
 |---|---|---|
-| `pmcp-spec` | public | schema meta-validation + examples pass; TLA+ checked, mutants rejected |
-| `pmcp-python` | public | 214 collected, 213 passed, 1 skipped |
-| `pmcp-typescript` | public | **does not compile** — disclosed, not fixed |
-| `pmcp-rust` | public | `pmcp-core` 43 passed; `pmcp-ledger` **does not compile** — disclosed |
-| `pmcp-conformance` | public | 42 passed, 41 skipped |
-| `pmcp-safety` | public | policy evaluation, static analysis, audit tooling |
-| `pmcp-servers` | public | reference servers |
-| `pmcp-registry` | **held private** | in-memory TTL service discovery — no persistence, no seeds, no auth. Not published. |
-| `pmcp-labs` | **private, permanently** | quarantined, unsupported, no public channel |
+| `pcp-spec` | public | schema meta-validation + examples pass; TLA+ checked, mutants rejected |
+| `pcp-python` | public | 214 collected, 213 passed, 1 skipped |
+| `pcp-typescript` | public | **does not compile** — disclosed, not fixed |
+| `pcp-rust` | public | `pcp-core` 43 passed; `pcp-ledger` **does not compile** — disclosed |
+| `pcp-conformance` | public | 42 passed, 41 skipped |
+| `pcp-safety` | public | policy evaluation, static analysis, audit tooling |
+| `pcp-servers` | public | reference servers |
+| `pcp-registry` | **held private** | in-memory TTL service discovery — no persistence, no seeds, no auth. Not published. |
+| `pcp-labs` | **private, permanently** | quarantined, unsupported, no public channel |
 | `.github` | public | org profile, issue templates, CI docs, security policy |
 
 ### Python test count
 
-`pmcp-python` is **214 collected, 213 passed, 1 skipped** on a default
+`pcp-python` is **214 collected, 213 passed, 1 skipped** on a default
 `pip install -e ".[dev,numerics]"`, reproducible across runs. The one skip
 is `test_hnn_gate.py:208`, which only runs when torch/numpy are absent.
 
@@ -42,7 +42,7 @@ everywhere it appears. An intermediate draft also recorded
 "187 collected, 178 passed, 10 skipped", which was arithmetically
 impossible (178 + 10 = 188 outcomes from a 187-test collection) and has
 been removed. `LIMITATIONS.md` records the episode in full.
-- **TypeScript and `pmcp-ledger` do not compile** — 32 and 19 errors respectively. This
+- **TypeScript and `pcp-ledger` do not compile** — 32 and 19 errors respectively. This
   was previously hidden behind a non-blocking CI step. It is now a
   declared, disclosed failure rather than a silent pass.
 
@@ -59,9 +59,9 @@ The models explore 10 and 8 distinct states. "Verified" here means the
 specs are internally consistent and the checker is not passing
 vacuously — **not** that real-robot behaviour is proved.
 
-### pmcp-registry is held private
+### pcp-registry is held private
 
-The launch plan had assumed pmcp-registry was a public registry seeded
+The launch plan had assumed pcp-registry was a public registry seeded
 with reference servers. It is an in-memory TTL discovery service: no
 persistence, no seed data, no auth, `CORS *` on writes. Everything
 registered vanishes on restart and nothing is curated. It is **held
@@ -71,14 +71,14 @@ match. It becomes public when it has persistence, then seeds, then auth.
 ### Version tags are per-repository
 
 The publishable packages were bumped from 0.5.0 to 1.0.0, so `v1.0.0` is
-accurate for them. `pmcp-spec` is a different artifact and stays at
+accurate for them. `pcp-spec` is a different artifact and stays at
 **v0.6.0**, matching the version its JSON Schema carries. A tag that
 disagrees with the artifact is a small lie that somebody will notice.
 
 ### TypeScript error count
 
-`pmcp-typescript` has **32** compile errors, not 19 — the 19 belonged to
-`pmcp-ledger`. The cause of the stale figure is worth knowing: with no
+`pcp-typescript` has **32** compile errors, not 19 — the 19 belonged to
+`pcp-ledger`. The cause of the stale figure is worth knowing: with no
 local `node_modules`, `npx tsc --noEmit` prints a decoy banner and exits
 0, so grepping its output for `error TS` returns zero and a compile
 failure reads as a clean build.
@@ -87,7 +87,7 @@ failure reads as a clean build.
 
 - `gitleaks` clean across all ten repositories, with one narrow
   allowlist for a `shadowToken` documentation placeholder in
-  `pmcp-spec`.
+  `pcp-spec`.
 - The monorepo-era `workflows/ci.yml` is deliberately **not** published
   as the org's default workflow: it would attempt to run in every
   repository in the org, including ones it has nothing to do with.

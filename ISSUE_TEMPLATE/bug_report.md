@@ -7,7 +7,7 @@
 -->
 
 **Which repository?**
-<!-- pmcp-spec / pmcp-python / pmcp-typescript / pmcp-rust / pmcp-conformance / pmcp-safety / pmcp-servers / pmcp-registry -->
+<!-- pcp-spec / pcp-python / pcp-typescript / pcp-rust / pcp-conformance / pcp-safety / pcp-servers / pcp-registry -->
 
 ## What happened
 
@@ -28,7 +28,7 @@
 - OS:
 - Python / Node / Rust version:
 - Installed extras (`hnn`, `numerics`, `http`, …):
-- `pmcp-spec` protocol version / JSON Schema version:
+- `pcp-spec` protocol version / JSON Schema version:
 
 ## Is this a safety issue?
 

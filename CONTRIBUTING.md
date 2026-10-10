@@ -10,7 +10,7 @@ constraints. Read the one for wherever you are working.
 
 ## Before you start
 
-1. **Read [`pmcp-spec/LIMITATIONS.md`](https://github.com/physicalcontextprotocol/pmcp-spec/blob/main/LIMITATIONS.md).**
+1. **Read [`pcp-spec/LIMITATIONS.md`](https://github.com/physicalcontextprotocol/pcp-spec/blob/main/LIMITATIONS.md).**
    It lists what is verified and, more importantly, what is not. A
    contribution aimed at an open problem in that list is much more
    likely to be useful than one aimed at a solved one.
@@ -18,23 +18,23 @@ constraints. Read the one for wherever you are working.
    repositories here are explicitly incomplete, and their READMEs say
    which parts.
 3. **Open an issue before a large change**, especially in
-   `pmcp-registry`, where the architecture is genuinely undecided.
+   `pcp-registry`, where the architecture is genuinely undecided.
 
 ## Pick the right repository
 
 | If you are working on… | Go to |
 |---|---|
-| The wire protocol, schemas, TLA+ models | `pmcp-spec` |
-| The Python SDK | `pmcp-python` |
-| The TypeScript SDK | `pmcp-typescript` |
-| The Rust crates | `pmcp-rust` |
-| Protocol compliance tests | `pmcp-conformance` |
-| The safety loop, TEE, multisig, edge hardening | `pmcp-safety` |
-| Example robot servers | `pmcp-servers` |
-| The fleet registry | `pmcp-registry` |
+| The wire protocol, schemas, TLA+ models | `pcp-spec` |
+| The Python SDK | `pcp-python` |
+| The TypeScript SDK | `pcp-typescript` |
+| The Rust crates | `pcp-rust` |
+| Protocol compliance tests | `pcp-conformance` |
+| The safety loop, TEE, multisig, edge hardening | `pcp-safety` |
+| Example robot servers | `pcp-servers` |
+| The fleet registry | `pcp-registry` |
 | Anything unowned, experimental, or broken | **nowhere** — open an issue first |
 
-`pmcp-labs` is a private quarantine. Do not contribute there and do not
+`pcp-labs` is a private quarantine. Do not contribute there and do not
 open issues against it. It exists so that material without an owner
 stops looking like it has one.
 
@@ -99,7 +99,7 @@ Please include:
 ## Reporting a security issue
 
 Not a pull request. See
-[`pmcp-spec/SECURITY.md`](https://github.com/physicalcontextprotocol/pmcp-spec/blob/main/SECURITY.md).
+[`pcp-spec/SECURITY.md`](https://github.com/physicalcontextprotocol/pcp-spec/blob/main/SECURITY.md).
 Private vulnerability reporting is enabled on every repository.
 
 ## Code of conduct
